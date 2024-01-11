@@ -1,0 +1,160 @@
+.App {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 128px 32px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.ScrollGallery {
+  display: grid;
+  grid-auto-flow: column;
+  padding-bottom: 40px;
+  overflow-x: auto;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.ScrollGallery::-webkit-scrollbar {
+  display: none;
+}
+
+.ScrollGallery-card {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+.ScrollGallery-card-img {
+  padding-bottom: 32px;
+  width: 344px;
+  height: 344px;
+}
+
+.ScrollGallery-card-title {
+  font-size: 28px;
+  font-weight: 600;
+  padding-bottom: 16px;
+  padding-left: 8px;
+  color: #525C7A;
+}
+
+.ScrollGallery-card-date {
+  font-weight: 500;
+  font-size: 18px;
+  color: #A2ACC7;
+  padding-left: 8px;
+}
+
+.rightLeaf {
+  border-top-right-radius: 75%;
+  border-bottom-left-radius: 75%
+}
+
+.leftLeaf {
+  border-top-left-radius: 75%;
+  border-bottom-right-radius: 75%;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.bigLeaf {
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+}
+
+.long {
+  width: 688px;
+}
+
+.longCircle {
+  border-radius: 200px;
+}
+
+.Title {
+  color: #7884A5;
+  font-weight: 700;
+  font-size: 72px;
+  margin: 0;
+  padding-bottom: 54px
+}
+
+.Description {
+  font-weight: 400;
+  font-size: 24px;
+  display: block;
+  margin-bottom: 57px;
+  color: #292E3D;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Buttons-prev {
+  background-image: url('../public/opacityLeft.png');
+  width: 172px;
+  height: 35px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-position: -15% 50%;
+  background-repeat: no-repeat;
+}
+
+.Buttons-next {
+  background-image: url('../public/opacityRight.png');
+  width: 172px;
+  height: 35px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-position: 30% 50%;
+  background-repeat: no-repeat;
+}
+
+
+
+@media (hover: hover) {
+  .Buttons-next:hover {
+    background-image: url('../public/right.png');
+  }
+
+  .Buttons-prev:hover {
+    background-image: url('../public/left.png');
+  }
+
+  .ScrollGallery-card {
+    cursor: pointer;
+  }
+
+  .ScrollGallery-card:hover .ScrollGallery-card-title {
+    color: #4FBA67;
+  }
+}
+
+@media (hover: none) {
+  .Buttons-next:active {
+    background-image: url('../public/right.png');
+  }
+
+  .Buttons-prev:active {
+    background-image: url('../public/left.png');
+  }
+
+  .ScrollGallery-card:active .ScrollGallery-card-title {
+    color: #4FBA67;
+  }
+}
